@@ -6,5 +6,5 @@ def BMIcalc(heightFeet, heightInch, weight):
     hInch = heightInch + (heightFeet * 12)
     hInch = hInch * 0.025
     BMI = (kilos/ (hInch * hInch))
-    BMI = round(BMI, 2)
+    BMI = round(BMI, 1)
     return BMI

@@ -82,7 +82,8 @@ def main():
             
             
         if choice == 2:
-            print("")
+            from savingCalc import savingCalc
+            print()
             
     
         if choice == 3:
