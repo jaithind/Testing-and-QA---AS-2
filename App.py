@@ -75,8 +75,8 @@ def main():
             heightInch = setHeightInch()
             weight = setWeight()
             BMI = BMIcalc(heightFeet, heightInch, weight)
-            BMI = str(BMI)
             determine = BMIcategory(BMI)
+            BMI = str(BMI)
     
             print("Your BMI is " + BMI + " and your category is "+ determine + ".")
             
