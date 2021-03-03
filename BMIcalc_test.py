@@ -10,5 +10,5 @@ class TestCase(unittest.TestCase):
     def test_BMIcalc2(self):
         result = BMIcalc(5, 3, 125)
         self.assertEqual(result, 22.7)
-        
+               
         

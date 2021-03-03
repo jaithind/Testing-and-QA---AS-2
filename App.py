@@ -1,4 +1,8 @@
 import os
+from getPosValue import getPosValue
+from BMIcalc import BMIcalc
+from BMIcategory import BMIcategory
+from savingCalc import savingCalc
 
 def main():
     
@@ -14,101 +18,57 @@ def main():
             try: 
                 choice = int(input("Enter your choice: "))
                 if 0 <= choice <= 3:
+                    print(" ")
                     positive = True
                 else:
-                    print("Please select ")
+                    print("Please select between the available choices.")
             except ValueError:
-                print("Invalid input. Please select 1 or 2.")
+                print("Invalid input. Please select between the available choices.")
             continue
         
+        
+        
         if choice == 1:
-            from BMIcalc import BMIcalc
-            from BMIcategory import BMIcategory
-
-            def setHeightFeet():
-                positive = False
-                while not positive:
-                    try: 
-                        height = int(input("Feet: "))
-                        if height > 0:
-                            positive = True
-                        else:
-                            print("Please enter a positive number")
-                    except ValueError:
-                        print("Invalid input. Please enter a positive number.")
-                        continue
-                    return height
-    
-            def setHeightInch():
-                positive = False
-                while not positive:
-                    try: 
-                        height = int(input("Inch: "))
-                        if 0 <= height <= 12:
-                            positive = True
-                        else:
-                            print("Please enter a number between 0 and 12")
-                    except ValueError:
-                        print("Invalid input. Please enter a number between 0 and 12.")
-                        continue
-                    return height
-
-            def setWeight():
-                positive = False
-                while not positive:
-                    try: 
-                        weight = int(input("Weight(in pounds): "))
-                        if weight > 0:
-                            positive = True
-                        else:
-                            print("Please enter a number between 0 and 12")
-                    except ValueError:
-                        print("Invalid input. Please enter a number between 0 and 12.")
-                        continue
-                    return weight
-
-            print("Please enter your your height and weight."
-                "First the feet, then the inches. Press enter between prompts.")
-
             
-            heightFeet = setHeightFeet()
-            heightInch = setHeightInch()
-            weight = setWeight()
+            
+            print("Please enter your your height and weight."
+                " First the feet, then the inches. Press enter between prompts.")
+            
+            heightFeet = getPosValue("Feet")
+            heightInch = getPosValue("Inches")
+            weight = getPosValue("Weight")
             BMI = BMIcalc(heightFeet, heightInch, weight)
             determine = BMIcategory(BMI)
             BMI = str(BMI)
     
             print("Your BMI is " + BMI + " and your category is "+ determine + ".")
+            print(" ")
+            
             
             
         if choice == 2:
-            from savingCalc import savingCalc
-            print()
+           
+            print("Please enter the follwing fields.")
             
-    
+            curAge = getPosValue("Current Age")
+            salary = getPosValue("Salary")
+            perSaved = getPosValue("Percentage Saved")
+            desGoal = getPosValue("Desired Goal")
+            goal = savingCalc(curAge, salary, perSaved, desGoal)
+            
+            if goal < 100:
+                goal = str(goal)
+                print("Your age when you meet your goal will be " + goal)
+                print(" ")
+            else:
+                print("You will not meet your goal before death.")
+                print(" ")
+            
         if choice == 3:
             loop = False
             break
-        
         
         if choice == 0:
             os.system('cls')
             
 main()
-            
-            
-            
-        
-    
-    
-
-
-    
-    
-
-    
-
-        
-    
-    
-    
