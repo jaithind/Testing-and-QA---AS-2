@@ -1,3 +1,6 @@
+# To execute this test file type the following in a ternmainal: 
+# python -m unittest BMIcategory_test.py
+
 import unittest
 from BMIcategory import BMIcategory
 

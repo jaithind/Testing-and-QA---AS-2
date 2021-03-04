@@ -1,3 +1,4 @@
+#returns the ctaegory of the BMI calculated
 def BMIcategory(BMI):
     result = ""
     if BMI<18.5:

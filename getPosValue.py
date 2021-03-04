@@ -1,3 +1,4 @@
+#validates the user to input positive numbers
 def getPosValue(name):
             positive = False
             while not positive:

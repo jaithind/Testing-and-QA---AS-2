@@ -1,3 +1,4 @@
+#calculates the BMI
 def BMIcalc(heightFeet, heightInch, weight):
     heightFeet = float(heightFeet)
     heightInch = float(heightInch)

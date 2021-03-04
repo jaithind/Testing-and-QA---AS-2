@@ -1,3 +1,4 @@
+#calculates the retirement savings
 def savingCalc(curAge, salary, perSaved, desGoal):
     curAge = float(curAge)
     salary = float(salary)
